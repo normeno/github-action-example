@@ -1,0 +1,30 @@
+name: Print Step Data
+
+on: [push]
+
+jobs:
+  checkout:
+    name: checkout-job
+    runs-on: ubuntu-latest
+    steps:
+      # use https://github.com/actions/checkout
+      - name: Checkout
+        uses: actions/checkout@v2
+
+  setup:
+    needs: checkout
+    name: setup-job
+    runs-on: ubuntu-latest
+    steps:
+      # use https://github.com/actions/setup-node
+      - name: Use Node
+        uses: actions/setup-node@v3
+  
+  print-success:
+    needs: [checkout, setup] 
+    name: print success
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Success Workflow
+      run: echo "All jobs are completed"
