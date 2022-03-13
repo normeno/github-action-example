@@ -1,15 +1,17 @@
-name: Simple Echo
+name: Print Step Data
 
 on: [push]
 
 jobs:
-  print-name:
+  print-step-data:
     runs-on: ubuntu-latest
     steps:
       - id: print-name-step
         name: Print name with echo
         run: echo "Normeno"
-      - name: Log step time
-        run: echo '${{ steps.print-name-step.outputs.time }}'
       - name: Dump steps context
         run: echo '${{ toJSON(steps) }}'
+      - name: Log step time
+        run: echo '${{ steps.print-name-step.outputs.time }}'
+      - name: Dump print-name-step step
+        run: echo '${{ steps.print-name-step }}'
