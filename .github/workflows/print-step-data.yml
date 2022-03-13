@@ -6,9 +6,9 @@ jobs:
   print-step-data:
     runs-on: ubuntu-latest
     steps:
-      - id: print-name-step
-        name: Print name with echo
-        run: echo "Normeno"
+      - id: install-dependencies
+        name: Install dependencies
+        run: npm install
       - name: Dump steps context
         run: echo '${{ toJSON(steps) }}'
       - name: Log step time
