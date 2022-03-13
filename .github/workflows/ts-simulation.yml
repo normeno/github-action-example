@@ -1,4 +1,4 @@
-name: Print Step Data
+name: TS Simulation
 
 on: [push]
 
@@ -14,8 +14,7 @@ jobs:
       - name: Use Node
         uses: actions/setup-node@v3
       
-      - id: Install dependencies
-        name: Install dependencies
+      - name: Install dependencies
         run: npm install
       
       - name: Build project
