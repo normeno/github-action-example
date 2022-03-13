@@ -1,0 +1,15 @@
+name: Simple Echo
+
+on: [push]
+
+jobs:
+  print-name:
+    runs-on: ubuntu-latest
+    steps:
+      - id: print-name-step
+        name: Print name with echo
+        run: echo "Normeno"
+      - name: Log step time
+        run: "Time: ${{ steps.print-name-step.outputs.time }}"
+      - name: Print all outputs
+        run: ${{ fromJSON(steps.print-name-step.outputs) }}
