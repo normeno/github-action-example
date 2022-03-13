@@ -10,6 +10,6 @@ jobs:
         name: Print name with echo
         run: echo "Normeno"
       - name: Log step time
-        run: "Time: ${{ steps.print-name-step.outputs.time }}"
+        run: ${{ steps.print-name-step.outputs.time }}
       - name: Print all outputs
         run: ${{ fromJSON(steps.print-name-step.outputs) }}
