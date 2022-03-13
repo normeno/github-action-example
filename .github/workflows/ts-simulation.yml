@@ -1,0 +1,25 @@
+name: Print Step Data
+
+on: [push]
+
+jobs:
+  print-step-data:
+    runs-on: ubuntu-latest
+    steps:
+      # use https://github.com/actions/checkout
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      # use https://github.com/actions/setup-node
+      - name: Use Node
+        uses: actions/setup-node@v3
+      
+      - id: Install dependencies
+        name: Install dependencies
+        run: npm install
+      
+      - name: Build project
+        run: npm run build
+      
+      - name: Testing
+        run: npm run test
