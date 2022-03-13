@@ -12,4 +12,4 @@ jobs:
       - name: Log step time
         run: ${{ steps.print-name-step.outputs.time }}
       - name: Print all outputs
-        run: ${{ fromJSON(steps.print-name-step.outputs) }}
+        run: ${{ toJSON(steps.print-name-step.outputs) }}
