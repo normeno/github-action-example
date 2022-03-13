@@ -14,4 +14,4 @@ jobs:
       - name: Log step time
         run: echo '${{ steps.print-name-step.outputs.time }}'
       - name: Dump print-name-step step
-        run: echo '${{ steps.print-name-step }}'
+        run: echo '${{ toJson(steps.print-name-step) }}'
