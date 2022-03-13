@@ -3,7 +3,7 @@ name: TS Simulation
 on: [push]
 
 jobs:
-  print-step-data:
+  ts-simulation:
     runs-on: ubuntu-latest
     steps:
       # use https://github.com/actions/checkout
