@@ -1,4 +1,4 @@
-name: Print Step Data
+name: Sequential Jobs
 
 on: [push]
 
