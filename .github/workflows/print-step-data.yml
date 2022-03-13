@@ -11,3 +11,5 @@ jobs:
         run: echo "Normeno"
       - name: Log step time
         run: echo ${{ steps.print-name-step.outputs.time }}
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
